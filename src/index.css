@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap');
+
+
+:root {
+  --purple: hsl(259, 100%, 65%);
+  --lightRed: hsl(0, 100%, 67%);
+  --white: hsl(0, 0%, 100%);
+  --offWhite: hsl(0, 0%, 94%);
+  --lightGrey: hsl(0, 0%, 86%);
+  --smokeyGrey: hsl(0, 1%, 44%);
+  --offBlack: hsl(0, 0%, 8%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+}
+
+#root {
+  height: 100%;
+  background-color: var(--offWhite);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  background-color: var(--white);
+  padding: 1.5rem;
+  border-radius: 10px 10px 70px 10px;
+}
+form {
+  display: flex;
+  gap: 1rem;
+  border-bottom: 2px solid var(--offWhite);
+  padding-bottom: 1.5rem;
+}
+form .form-field {
+  display: flex;
+  flex-direction: column;
+}
+.age-box {
+  display: flex;
+  flex-direction: column;
+}
+.age-box .digit {
+  font-size: 40px;
+  color: var(--purple);
+  font-weight: 900;
+  font-style: italic;
+}
+.age-box > * {
+  color: var(--offBlack);
+  font-weight: 900;
+  font-style: italic;
+  font-size: 40px;
+}
