@@ -10,30 +10,27 @@
   --smokeyGrey: hsl(0, 1%, 44%);
   --offBlack: hsl(0, 0%, 8%);
 }
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
-
 body {
   height: 100vh;
   width: 100%;
 }
-
 #root {
   height: 100%;
   background-color: var(--offWhite);
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 1.5rem;
 }
-
 .container {
   background-color: var(--white);
-  padding: 1.5rem;
+  padding: 2rem 3.5rem 2rem 2rem;
   border-radius: 10px 10px 70px 10px;
 }
 form {
@@ -41,14 +38,75 @@ form {
   gap: 1rem;
   border-bottom: 2px solid var(--offWhite);
   padding-bottom: 1.5rem;
+  padding-right: 4rem;
+  position: relative;
 }
 form .form-field {
   display: flex;
   flex-direction: column;
+  gap: 0.3rem;
+}
+.form-field label {
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: var(--smokeyGrey);
+  text-transform: uppercase;
+}
+.form-field input {
+  font-family: 'Poppins', sans-serif;
+  width: 100px;
+  height: 2.5rem;
+  padding: 1rem;
+  border: 1px solid var(--lightGrey);
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--offBlack);
+}
+.form-field input:focus {
+  outline: none;
+  border: 1px solid var(--purple);
+}
+.form-field input::-webkit-inner-spin-button,
+.no-arrows-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.form-field input::placeholder {
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--smokeyGrey);
+  opacity: 0.8;
+}
+.arrow-box {
+  background-color: var(--purple);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: absolute;
+  bottom: -25px;
+  right: -2rem;
+  
+}
+.arrow-box:hover {
+  background-color: var(--offBlack);
+}
+.arrow-box img {
+  width: 35px;
+  height: 35px;
 }
 .age-box {
   display: flex;
   flex-direction: column;
+  margin-top: 1rem;
 }
 .age-box .digit {
   font-size: 40px;
@@ -61,4 +119,28 @@ form .form-field {
   font-weight: 900;
   font-style: italic;
   font-size: 40px;
+}
+
+@media screen and (max-width: 548px) {
+  .container {
+    padding: 2rem;
+  }
+  form {
+    padding-right: 0;
+    padding-bottom: 3rem;
+  }
+  .arrow-box {
+    bottom: -25px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+  .age-box {
+    margin-top: 3rem;
+  }
+}
+
+@media screen and (max-width: 435px) {
+  .form-field input {
+    width: 85px;
+  }
 }
